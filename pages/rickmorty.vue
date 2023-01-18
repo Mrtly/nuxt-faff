@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen w-screen bg-purple-100 p-10">
-    <CharCard v-for="{ name, image, status } in data?.characters.results"
+    <CharCard v-for="{ name, image, status } in charactersList"
       :key="name"
       :name="name"
       :image="image"
@@ -11,34 +11,19 @@
 </template>
 
 <script lang="ts" setup>
+import { useCharactersStore } from '~~/store/characters'
 
-type Char = {
-  name: string;
-  image: string;
-  status: string;
-};
+// interface Chars {
+//   name: string
+//   image: string
+//   status: string
+// }
 
-type Results = {
-  characters: {
-    results: Char[]
-  }
-}
+// interface CharsList {
+//   characters: Chars[]
+// }
 
-const query = gql`
-  query getChars {
-    characters {
-      results {
-        name
-        image
-        status
-        id
-        species
-        location {
-          name
-        }
-      }
-    }
-  }
-`
-const { data } = await useAsyncQuery<Results>(query)
+const charactersStore = useCharactersStore()
+await charactersStore.getChars();
+const charactersList = charactersStore.list;
 </script>

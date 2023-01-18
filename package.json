@@ -12,5 +12,12 @@
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "nuxt": "^3.0.0"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "pinia": "^2.0.29"
   }
 }
