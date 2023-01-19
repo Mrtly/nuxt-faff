@@ -1,6 +1,6 @@
 <template>
   <div class="font-mono font-semibold">
-    {{ name }} 
+    <div class="w-40 truncate">{{ name }}</div> 
     <NuxtImg 
       :src="image"
       width="160"

@@ -1,5 +1,5 @@
-### Nuxt 3 adventures
+### Nuxt3 adventures
 
-with Apollo GraphQL, Tailwind, Pinia, TypeScript and all-the-things
+learning repo with Apollo GraphQL, TailwindCSS, Pinia, TypeScript and all-the-things
 
-(learning repo)
+on [trynuxt.vercel.app](trynuxt.vercel.app)
