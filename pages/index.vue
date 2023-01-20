@@ -1,5 +1,5 @@
 <template>
-  very much WIP :)
+  very much WIP :) but there may be a game soonish
 </template>
 
 <script lang="ts">

@@ -12,7 +12,7 @@
         <li> 
           <NuxtLink to="/rickmorty" :class="['mr-10 list-none w-max p-1 border-b-2 transition-colors duration-200',
             routeName === 'rickmorty' ? 'border-amber-700' : 'border-gray-400 hover:bg-amber-700' ]"> 
-            R & M 
+            a Rick & Morty Game
           </NuxtLink> 
         </li>
         <li> 
