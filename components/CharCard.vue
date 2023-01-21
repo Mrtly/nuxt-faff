@@ -5,7 +5,7 @@
         :src="imgSrc"
         width="200"
         height="200"
-        :class="['shadow-md rounded-md asbolute inset-0 backface-hidden',
+        :class="['w-40 lg:w-full shadow-md rounded-md asbolute inset-0 backface-hidden',
             flipped ? 'front rotate-y-[180deg]': 'back rotate-y-[0deg]']"
         />
     </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
   id: { type: String, required: true },
