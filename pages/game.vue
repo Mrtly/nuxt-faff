@@ -1,27 +1,18 @@
 <template>
-  <div class="h-screen w-screen">
-    <!-- TODO extract tooltip -->
-    <!-- <div class="">
-      <div class="underline text-sm mb-5 w-max cursor-default
-      relative transition-all
-      before:content-['it.is.a.game!.but.not.ready.yet'] before:p-1  before:h-6 
-      before:absolute before:-top-1 before:left-28 before:opacity-0
-      before:transition-all before:duration-300 before:text-amber-700
-      hover:before:opacity-100 hover:before:w-44">what is this?</div>
-    </div> -->
-
-    <div :class="['flex items-center h-16 border-b border-amber-700 mb-3',
-          gameOn? ' justify-center' : ' justify-start' ]">
+  <div class="w-screen h-[calc(100vh-80px)]">
+    <div class="flex flex-col items-center justify-center h-20 w-80 mx-auto border-b border-purple-700 mb-10">
+      
       <button v-if="!gameOn" @click="startGame" 
-        class="py-1.5 px-4 my-4 shadow rounded bg-amber-700 hover:bg-amber-800 hover:shadow-md text-white tracking-wide">
+        class="py-1.5 px-4 my-4 shadow rounded bg-purple-700 hover:bg-purple-800 active:bg-purple-600 hover:shadow-lg text-white tracking-wide">
         start
       </button>
+      <div v-else>matched: {{arrayOfSolved.length}}/{{gameSize}}</div>
 
-      <span v-if="showMatch" class="animate-bounce text-amber-700 text-lg font-semibold">match!</span>
+      <div v-if="showMatch" class="animate-bounce text-purple-700 text-lg font-semibold">match!</div>
     </div>
 
     <client-only>
-      <div class="grid grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-6 max-w-xl lg:max-w-6xl">
+      <div class="mx-auto px-2 grid grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-6 max-w-xl lg:max-w-6xl">
         <CharCard v-for="({ id, name, image, status, flipped, solved }, index) in gameCards"
           :key="index"
           :id="id"
@@ -33,6 +24,8 @@
           @click="clickOnImg(id, index)"
           />
       </div>
+
+      <div class="text-zinc-400 text-center my-10">using the Rick & Morty GraphQL API</div>
     </client-only>
   </div>
 </template>
